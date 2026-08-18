@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ifa Oracle — The Oracle That Knows Before You Speak</title>
+<meta name="description" content="Ifa Oracle delivers authentic Yoruba Ifa divination readings, powered by AI trained on the 256 Odu corpus. Available on web and Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080608;
+    --ink:#F0EBE0;
+    --copper:#B87333;
+    --terracotta:#8B3A2A;
+    --muted:#888888;
+    --surface:#12100E;
+    --serif:'Cormorant Garamond', serif;
+    --sans:'Inter', sans-serif;
+    --max:1200px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  @media(min-width:900px){
+    .wrap{padding:0 40px;}
+  }
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--copper);
+    font-weight:600;
+  }
+
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:500;
+    line-height:1.1;
+  }
+
+  section{
+    padding:88px 0;
+    position:relative;
+  }
+
+  /* ---------- Odu mark system (signature element) ----------
+     Each Odu in Ifa is a unique pattern of single/double vertical
+     marks across two columns of four rows. We reuse this real
+     divination glyph — not decoration invented for this page —
+     as the visual signature throughout: hero atmosphere, step
+     markers, and section dividers. */
+
+  .odu-mark{
+    display:inline-grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:4px;
+    gap:4px 7px;
+    width:20px;
+  }
+  .odu-mark span{
+    height:4px;
+    border-radius:1px;
+    background:var(--copper);
+    opacity:0.85;
+  }
+  .odu-mark span.ii{background:none;border-top:4px double var(--copper);height:0;opacity:0.85;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:50;
+    padding:22px 0;
+    background:linear-gradient(to bottom, rgba(8,6,8,0.9), rgba(8,6,8,0));
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .logo{
+    font-family:var(--serif);
+    font-size:1.35rem;
+    letter-spacing:0.02em;
+  }
+  .logo em{font-style:normal;color:var(--copper);}
+  nav{display:none;gap:32px;font-size:0.85rem;letter-spacing:0.03em;}
+  @media(min-width:900px){nav{display:flex;}}
+  nav a{color:var(--muted);transition:color .2s;}
+  nav a:hover{color:var(--ink);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-top:120px;
+    position:relative;
+  }
+
+  .hero-glyphs{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-glyphs .col{
+    position:absolute;
+    top:-10%;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    animation:drift 34s linear infinite;
+  }
+  .hero-glyphs .odu-mark{width:16px;opacity:0.35;}
+  @keyframes drift{
+    from{transform:translateY(0);}
+    to{transform:translateY(30%);}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-glyphs .col{animation:none;}
+  }
+
+  .hero-inner{position:relative;z-index:1;max-width:760px;}
+
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.6rem);
+    margin:18px 0 22px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .accent{color:var(--copper);font-style:italic;}
+
+  .hero p.sub{
+    font-size:clamp(1rem, 2vw, 1.2rem);
+    color:var(--ink);
+    opacity:0.82;
+    max-width:520px;
+    margin-bottom:38px;
+  }
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:16px;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 30px;
+    font-size:0.92rem;
+    font-weight:600;
+    letter-spacing:0.03em;
+    border-radius:4px;
+    transition:filter .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--copper);
+    color:#0A0806;
+  }
+  .btn-primary:hover{filter:brightness(1.12);}
+  .btn-secondary{
+    background:transparent;
+    color:var(--ink);
+    border:1px solid var(--copper);
+  }
+  .btn-secondary:hover{background:rgba(184,115,51,0.1);}
+
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:20px;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.7rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    cursor:pointer;
+    background:none;
+    border:none;
+    font-family:inherit;
+    transition:color .2s;
+  }
+  .scroll-cue:hover{color:var(--ink);}
+  @media(min-width:900px){.scroll-cue{left:40px;}}
+  .scroll-cue::after{
+    content:'';
+    width:1px;height:40px;
+    background:linear-gradient(var(--copper), transparent);
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
+
+  /* ---------- What is section ---------- */
+  .intro{
+    text-align:left;
+    max-width:680px;
+  }
+  .intro h2{
+    font-size:clamp(1.7rem,3.4vw,2.4rem);
+    margin:14px 0 18px;
+  }
+  .intro p{
+    font-size:1.05rem;
+    color:var(--ink);
+    opacity:0.85;
+  }
+
+  /* ---------- How it works ---------- */
+  .steps{
+    display:grid;
+    gap:36px;
+    margin-top:52px;
+  }
+  @media(min-width:800px){
+    .steps{grid-template-columns:repeat(3,1fr);}
+  }
+  .step{
+    border-top:1px solid rgba(240,235,224,0.12);
+    padding-top:22px;
+  }
+  .step .odu-mark{margin-bottom:18px;width:26px;}
+  .step .odu-mark span{height:5px;}
+  .step h3{
+    font-size:1.3rem;
+    margin-bottom:8px;
+    font-weight:500;
+  }
+  .step p{color:var(--muted);font-size:0.95rem;}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    gap:20px;
+    margin-top:48px;
+  }
+  @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr);}}
+
+  .service-card{
+    background:var(--surface);
+    border:1px solid rgba(240,235,224,0.06);
+    border-radius:6px;
+    padding:28px 24px;
+    transition:border-color .2s, transform .2s;
+  }
+  .service-card:hover{border-color:rgba(184,115,51,0.4);transform:translateY(-2px);}
+  .service-card .odu-mark{margin-bottom:16px;}
+  .service-card h3{
+    font-size:1.25rem;
+    font-weight:500;
+    margin-bottom:8px;
+  }
+  .service-card p.desc{
+    color:var(--muted);
+    font-size:0.9rem;
+    margin-bottom:18px;
+  }
+  .service-card .price{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-top:1px solid rgba(240,235,224,0.08);
+    padding-top:14px;
+    font-family:var(--serif);
+    font-size:1.1rem;
+    color:var(--copper);
+  }
+  .price small{
+    font-family:var(--sans);
+    color:var(--muted);
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+  }
+
+  .center-cta{text-align:center;margin-top:48px;}
+
+  /* ---------- Testimonials ---------- */
+  .testi-scroll{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    margin-top:48px;
+    padding-bottom:12px;
+    scroll-snap-type:x mandatory;
+  }
+  .testi-scroll::-webkit-scrollbar{height:4px;}
+  .testi-scroll::-webkit-scrollbar-thumb{background:var(--copper);border-radius:2px;}
+
+  .testi-card{
+    flex:0 0 82%;
+    scroll-snap-align:start;
+    background:var(--surface);
+    border-radius:6px;
+    padding:30px 26px;
+    border:1px solid rgba(240,235,224,0.06);
+  }
+  @media(min-width:640px){.testi-card{flex:0 0 44%;}}
+  @media(min-width:1000px){.testi-card{flex:0 0 30%;}}
+
+  .testi-card .stars{color:var(--copper);font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;}
+  .testi-card p.quote{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    font-style:italic;
+    color:var(--ink);
+    margin-bottom:20px;
+  }
+  .testi-card .who{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  .testi-card .who strong{color:var(--ink);font-weight:500;}
+
+  /* ---------- Access cards ---------- */
+  .access-grid{
+    display:grid;
+    gap:24px;
+    margin-top:48px;
+  }
+  @media(min-width:800px){.access-grid{grid-template-columns:1fr 1fr;}}
+
+  .access-card{
+    background:linear-gradient(160deg, var(--surface), #0A0808);
+    border:1px solid rgba(240,235,224,0.07);
+    border-radius:8px;
+    padding:44px 36px;
+    position:relative;
+    overflow:hidden;
+  }
+  .access-card .odu-mark{width:30px;margin-bottom:24px;}
+  .access-card .odu-mark span{height:6px;}
+  .access-card h3{font-size:1.6rem;margin-bottom:10px;}
+  .access-card p{color:var(--muted);font-size:0.92rem;margin-bottom:26px;max-width:340px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid rgba(240,235,224,0.08);
+    padding:56px 0 32px;
+  }
+  .footer-top{
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+  }
+  @media(min-width:800px){
+    .footer-top{flex-direction:row;justify-content:space-between;}
+  }
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{color:var(--muted);font-size:0.88rem;max-width:280px;}
+  .footer-links{display:flex;gap:52px;flex-wrap:wrap;}
+  .footer-col h4{
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper);
+    margin-bottom:14px;
+    font-weight:600;
+  }
+  .footer-col a{
+    display:block;
+    color:var(--muted);
+    font-size:0.9rem;
+    margin-bottom:10px;
+    transition:color .2s;
+  }
+  .footer-col a:hover{color:var(--ink);}
+  .footer-bottom{
+    margin-top:48px;
+    padding-top:24px;
+    border-top:1px solid rgba(240,235,224,0.06);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:0.78rem;
+    color:var(--muted);
+  }
+  @media(min-width:800px){
+    .footer-bottom{flex-direction:row;justify-content:space-between;}
+  }
+
+  /* focus visibility */
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--copper);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo">Ifa <em>Oracle</em></a>
+    <nav>
+      <a href="readings.html">Readings</a>
+      <a href="library.html">Knowledge Library</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="about.html">About Ifa</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="https://t.me/Orispeak_bot" class="btn btn-secondary" style="padding:10px 20px;font-size:0.8rem;">Open in Telegram</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glyphs" aria-hidden="true">
+    <!-- decorative Odu-glyph columns; populated by JS -->
+    <div class="col" id="glyphColA" style="left:6%;"></div>
+    <div class="col" id="glyphColB" style="left:88%;animation-duration:44s;"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Yoruba Ifa Divination · AI-Guided</span>
+      <h1>The Oracle That <span class="accent">Knows</span> Before You Speak.</h1>
+      <p class="sub">Authentic readings drawn from the sacred 256 Odu, delivered in minutes — for anyone seeking clarity, wherever they are in the world.</p>
+      <div class="cta-row">
+        <a href="https://app.orispeaks.live" class="btn btn-primary">Start Reading on Web</a>
+        <a href="https://t.me/Orispeak_bot" class="btn btn-secondary">Open in Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="scroll-cue" onclick="document.getElementById('what-is-ifa').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">Scroll</button>
+</section>
+
+<!-- WHAT IS IFA ORACLE -->
+<section id="what-is-ifa">
+  <div class="wrap">
+    <div class="intro">
+      <span class="eyebrow">The Practice</span>
+      <h2>What Is Ifa Oracle</h2>
+      <p>Ifa Oracle draws on the sacred 256 Odu of the Yoruba Ifa tradition to deliver authentic divination readings — powered by AI trained on the ancient corpus, and guided by the same framework a Babalawo has used for generations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The Process</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.4rem);margin-top:14px;">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="odu-mark"><span></span><span class="ii"></span><span class="ii"></span><span></span><span></span><span></span></div>
+        <h3>Choose Your Service</h3>
+        <p>Select the reading that speaks to your situation — divination, compatibility, a yearly reading, and more.</p>
+      </div>
+      <div class="step">
+        <div class="odu-mark"><span class="ii"></span><span></span><span></span><span class="ii"></span><span></span><span class="ii"></span></div>
+        <h3>Pay Securely</h3>
+        <p>Complete payment by card or bank transfer — fast, encrypted, and never stored beyond what's needed.</p>
+      </div>
+      <div class="step">
+        <div class="odu-mark"><span></span><span></span><span class="ii"></span><span class="ii"></span><span class="ii"></span><span></span></div>
+        <h3>Receive Your Reading</h3>
+        <p>Your full reading arrives instantly as a PDF — clear, complete, and yours to keep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">Consultations</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.4rem);margin-top:14px;">Readings Available Now</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="odu-mark"><span></span><span class="ii"></span><span></span><span></span><span class="ii"></span><span></span></div>
+        <h3>General Divination</h3>
+        <p class="desc">A full reading of your current life path — what Orunmila sees in your season, and what must be done.</p>
+        <div class="price">₦2,000 <small>NGN / USD</small> $5</div>
+      </div>
+
+      <div class="service-card">
+        <div class="odu-mark"><span class="ii"></span><span></span><span class="ii"></span><span></span><span></span><span class="ii"></span></div>
+        <h3>Yearly Destiny Reading</h3>
+        <p class="desc">Your governing Odu for the year ahead — what each quarter brings, what to pursue, what to avoid.</p>
+        <div class="price">₦5,000 <small>NGN / USD</small> $12</div>
+      </div>
+
+      <div class="service-card">
+        <div class="odu-mark"><span></span><span></span><span class="ii"></span><span></span><span class="ii"></span><span class="ii"></span></div>
+        <h3>Dream Interpretation</h3>
+        <p class="desc">Decode the message sent through your dream — who sent it, what it means, and what to do.</p>
+        <div class="price">₦3,000 <small>NGN / USD</small> $7</div>
+      </div>
+
+      <div class="service-card">
+        <div class="odu-mark"><span class="ii"></span><span class="ii"></span><span></span><span></span><span></span><span class="ii"></span></div>
+        <h3>Compatibility Check</h3>
+        <p class="desc">The spiritual truth about two people — whether the union is blessed, and what it needs.</p>
+        <div class="price">₦3,500 <small>NGN / USD</small> $8</div>
+      </div>
+
+      <div class="service-card">
+        <div class="odu-mark"><span></span><span class="ii"></span><span class="ii"></span><span></span><span></span><span></span></div>
+        <h3>Career Destiny Reading</h3>
+        <p class="desc">Your true professional calling, what blocks your path, and what Orunmila prescribes for elevation.</p>
+        <div class="price">₦4,000 <small>NGN / USD</small> $10</div>
+      </div>
+
+      <div class="service-card">
+        <div class="odu-mark"><span></span><span></span><span></span><span class="ii"></span><span class="ii"></span><span class="ii"></span></div>
+        <h3>Family &amp; Ancestral Reading</h3>
+        <p class="desc">What the ancestors are carrying and how it shapes the living — the path to peace and healing.</p>
+        <div class="price">₦4,000 <small>NGN / USD</small> $10</div>
+      </div>
+
+    </div>
+    <div class="center-cta">
+      <a href="readings.html" class="btn btn-secondary">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS PREVIEW -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Real Outcomes</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.4rem);margin-top:14px;">What Clients Are Saying</h2>
+    <div class="testi-scroll">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The reading described my situation before I explained anything. It was unsettlingly accurate."</p>
+        <div class="who"><strong>Adaeze O.</strong><span>🇳🇬 Compatibility Check</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I've consulted Babalawo before. This carried the same weight, and arrived in minutes."</p>
+        <div class="who"><strong>Marcus T.</strong><span>🇬🇧 General Divination</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The ritual guide add-on made it possible to actually act on what the Odu revealed."</p>
+        <div class="who"><strong>Fernanda L.</strong><span>🇧🇷 Career Destiny Reading</span></div>
+      </div>
+    </div>
+    <div class="center-cta">
+      <a href="testimonials.html" class="btn btn-secondary">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- TWO WAYS TO ACCESS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Choose Your Path</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.4rem);margin-top:14px;">Two Ways to Access</h2>
+    <div class="access-grid">
+      <div class="access-card">
+        <div class="odu-mark"><span class="ii"></span><span></span><span></span><span class="ii"></span><span></span><span></span></div>
+        <h3>The Web App</h3>
+        <p>Full readings, order history, and every service in one place — built for a considered, unhurried consultation.</p>
+        <a href="https://app.orispeaks.live" class="btn btn-primary">Open Web App</a>
+      </div>
+      <div class="access-card">
+        <div class="odu-mark"><span></span><span class="ii"></span><span class="ii"></span><span></span><span class="ii"></span><span></span></div>
+        <h3>The Telegram Bot</h3>
+        <p>The same oracle, right inside chat — for a fast reading wherever you already are.</p>
+        <a href="https://t.me/Orispeak_bot" class="btn btn-primary">Open in Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">Ifa <em>Oracle</em></a>
+        <p>Authentic Yoruba Ifa divination, guided by AI, rooted in the 256 Odu.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="readings.html">Readings</a>
+          <a href="library.html">Knowledge Library</a>
+          <a href="store.html">Sacred Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About Ifa</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://t.me/Orispeak_bot">Telegram</a>
+          <a href="https://t.me/OrispeaksAdmin">Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ifa Oracle. All rights reserved.</span>
+      <span>Ile-Ife to everywhere.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Populate the two ambient glyph columns in the hero with real
+  // Odu-style marks (single dash = single line, double dash = double line)
+  // drawn at random per load — atmosphere, not literal readings.
+  function buildGlyphColumn(el, count){
+    for(let i=0;i<count;i++){
+      const mark = document.createElement('div');
+      mark.className = 'odu-mark';
+      for(let j=0;j<6;j++){
+        const s = document.createElement('span');
+        if(Math.random() > 0.5) s.className = 'ii';
+        mark.appendChild(s);
+      }
+      el.appendChild(mark);
+    }
+  }
+  const colA = document.getElementById('glyphColA');
+  const colB = document.getElementById('glyphColB');
+  if(colA && colB){
+    buildGlyphColumn(colA, 8);
+    buildGlyphColumn(colB, 8);
+  }
+</script>
+
+</body>
+</html>
