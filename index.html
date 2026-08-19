@@ -7,7 +7,7 @@
 <meta name="description" content="Ifa Oracle delivers authentic Yoruba Ifa divination readings, powered by AI trained on the 256 Odu corpus. Available on web and Telegram.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#080608;
@@ -16,8 +16,8 @@
     --terracotta:#8B3A2A;
     --muted:#888888;
     --surface:#12100E;
-    --serif:'Cormorant Garamond', serif;
-    --sans:'Inter', sans-serif;
+    --serif:'Cinzel', serif;
+    --sans:'Manrope', sans-serif;
     --max:1200px;
   }
 
@@ -54,6 +54,13 @@
     text-transform:uppercase;
     color:var(--copper);
     font-weight:600;
+  }
+
+  .hero-rule{
+    width:56px;height:1px;
+    background:var(--copper);
+    margin-top:18px;
+    opacity:0.6;
   }
 
   h1,h2,h3{
@@ -148,10 +155,10 @@
 
   .hero h1{
     font-size:clamp(2.4rem, 6vw, 4.6rem);
-    margin:18px 0 22px;
-    letter-spacing:-0.01em;
+    margin:22px 0 26px;
+    letter-spacing:0.01em;
   }
-  .hero h1 .accent{color:var(--copper);font-style:italic;}
+  .hero h1 .accent{color:var(--copper);font-weight:600;}
 
   .hero p.sub{
     font-size:clamp(1rem, 2vw, 1.2rem);
@@ -424,7 +431,7 @@
       <a href="about.html">About Ifa</a>
       <a href="faq.html">FAQ</a>
     </nav>
-    <a href="https://t.me/Orispeak_bot" class="btn btn-secondary" style="padding:10px 20px;font-size:0.8rem;">Open in Telegram</a>
+    <a href="start.html" class="btn btn-secondary" style="padding:10px 20px;font-size:0.8rem;">Start Reading</a>
   </div>
 </header>
 
@@ -439,11 +446,11 @@
   <div class="wrap">
     <div class="hero-inner">
       <span class="eyebrow">Yoruba Ifa Divination · AI-Guided</span>
+      <div class="hero-rule" aria-hidden="true"></div>
       <h1>The Oracle That <span class="accent">Knows</span> Before You Speak.</h1>
       <p class="sub">Authentic readings drawn from the sacred 256 Odu, delivered in minutes — for anyone seeking clarity, wherever they are in the world.</p>
       <div class="cta-row">
-        <a href="https://app.orispeaks.live" class="btn btn-primary">Start Reading on Web</a>
-        <a href="https://t.me/Orispeak_bot" class="btn btn-secondary">Open in Telegram</a>
+        <a href="start.html" class="btn btn-primary">Start Reading</a>
       </div>
     </div>
   </div>
