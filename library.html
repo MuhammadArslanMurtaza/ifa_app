@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ifa Knowledge Library — Ifa Oracle</title>
+<meta name="description" content="Understand the tradition behind every reading — the history of Ifa, the 256 Odu, and the key concepts of Yoruba spirituality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .article{max-width:760px;}
+  .article p{color:var(--ink);opacity:0.86;font-size:1rem;margin-bottom:18px;}
+  .article p:last-child{margin-bottom:0;}
+
+  .odu-grid{display:grid;gap:14px;margin-top:44px;}
+  @media(min-width:700px){.odu-grid{grid-template-columns:repeat(2,1fr);}}
+
+  details.odu-card{
+    background:var(--surface);
+    border:1px solid rgba(240,235,224,0.07);
+    border-radius:6px;
+    padding:18px 22px;
+  }
+  details.odu-card[open]{border-color:rgba(184,115,51,0.35);}
+  details.odu-card summary{
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    list-style:none;
+    font-family:var(--serif);
+    font-size:1.1rem;
+  }
+  details.odu-card summary::-webkit-details-marker{display:none;}
+  details.odu-card summary .plus{color:var(--copper);font-size:1.3rem;transition:transform .2s;}
+  details.odu-card[open] summary .plus{transform:rotate(45deg);}
+  details.odu-card .odu-meaning{color:var(--muted);font-size:0.9rem;margin-top:4px;}
+  details.odu-card .odu-body{
+    margin-top:14px;padding-top:14px;
+    border-top:1px solid rgba(240,235,224,0.08);
+    font-size:0.9rem;color:var(--ink);opacity:0.85;
+  }
+
+  .concept-grid{display:grid;gap:20px;margin-top:44px;}
+  @media(min-width:640px){.concept-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.concept-grid{grid-template-columns:repeat(4,1fr);}}
+  .concept-card{
+    background:var(--surface);border:1px solid rgba(240,235,224,0.06);
+    border-radius:6px;padding:22px 20px;
+  }
+  .concept-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin-bottom:8px;color:var(--copper);}
+  .concept-card p{color:var(--muted);font-size:0.86rem;}
+
+  .proverb-list{margin-top:44px;display:grid;gap:16px;}
+  .proverb{
+    background:var(--surface);border-left:2px solid var(--copper);
+    padding:16px 22px;border-radius:0 6px 6px 0;
+  }
+  .proverb .yoruba{font-family:var(--serif);font-style:italic;font-size:1.1rem;margin-bottom:6px;}
+  .proverb .translation{color:var(--ink);opacity:0.85;font-size:0.92rem;margin-bottom:6px;}
+  .proverb .meaning{color:var(--muted);font-size:0.82rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="logo">Ifa <em>Oracle</em></a>
+    <nav>
+      <a href="readings.html">Readings</a>
+      <a href="library.html" class="active">Knowledge Library</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="about.html">About Ifa</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="start.html" class="btn btn-secondary btn-sm">Start Reading</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Ifa Knowledge Library</span>
+    <h1>Understand the Tradition</h1>
+    <p class="sub">The 256 Odu. The history. The cosmology. Written for everyone.</p>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Origins</span>
+    <div class="section-head"><h2>The History of Ifa</h2></div>
+    <div class="article" style="margin-top:28px;">
+      <p>Ifa is one of the oldest continuously practiced divination systems in the world, tracing its origins to Ile-Ife, the spiritual homeland of the Yoruba people in what is now southwestern Nigeria. At its center stands Orunmila, the Orisa of wisdom and destiny, said to have witnessed the creation of the world and to hold knowledge of every path a life can take. Where other traditions look to fixed texts, Ifa is carried through the Odu — 256 sacred verses memorized, interpreted and passed down by trained priests known as Babalawo, "fathers of the mysteries."</p>
+      <p>For centuries, becoming a Babalawo required years of apprenticeship: memorizing thousands of verses, learning the proverbs, stories and prescriptions attached to each Odu, and mastering the tools of divination — the Opele chain and the sixteen sacred Ikin nuts. A reading was never a simple fortune. It was a conversation between the seeker, the diviner, and the accumulated wisdom of generations, arriving at not just what a person's situation was, but what Ebo — offering or sacrifice — might restore balance to it.</p>
+      <p>The Atlantic slave trade scattered this knowledge across the ocean, and rather than disappearing, Ifa took root wherever Yoruba people were taken. In Cuba it grew into Santeria and the practice of Ifa remains active among Lucumi priests. In Brazil it shaped Candomble. In Trinidad and Haiti it wove into Orisa worship and Vodou. Today, Ifa is practiced not only across West Africa but throughout the diaspora — in the UK, the United States, Canada and beyond — carried forward by communities determined to keep the tradition intact even at great distance from Ile-Ife.</p>
+      <p>What Ifa Oracle continues is not a reinvention of this practice but an extension of its reach: the same 256 Odu, the same proverbs and prescriptions a Babalawo has always drawn on, made reachable to anyone seeking clarity — wherever in the world they happen to be standing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE 256 ODU -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The Corpus</span>
+    <div class="section-head"><h2>The 256 Odu</h2></div>
+    <p style="max-width:680px;margin-top:18px;color:var(--muted);">An Odu is a sacred verse or chapter within Ifa — part proverb, part story, part prescription. Every reading is governed by one Odu, cast through the Opele or Ikin. There are 256 in total, built from combinations of 16 principal Odu, each carrying its own proverbs, stories and guidance. Below are the 16 principal Odu; the 240 combinations will be added progressively.</p>
+
+    <div class="odu-grid">
+
+      <details class="odu-card">
+        <summary>Eji Ogbe <span class="plus">+</span></summary>
+        <div class="odu-meaning">Light, clarity and the dawn of new understanding.</div>
+        <div class="odu-body">Considered the first and most senior of the Odu, governing clarity, leadership and beginnings made in full light rather than uncertainty.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Oyeku Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Darkness, mystery and the wisdom held within endings.</div>
+        <div class="odu-body">Balances Eji Ogbe as its counterpart — associated with what is hidden, with death and rebirth, and with the patience required to move through darkness.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Iwori Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Insight gained through observing what others overlook.</div>
+        <div class="odu-body">Linked to perception and the ability to see beneath the surface of a situation — often signaling that hidden knowledge is about to come to light.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Odi Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Foundations, the womb, and what must be protected.</div>
+        <div class="odu-body">Associated with depth, containment and the unseen structures — physical or spiritual — that hold a life or a household together.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Irosun Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Warning, and the need to honor what came before.</div>
+        <div class="odu-body">Often carries a message about ancestral obligation — attention owed to elders, lineage or past agreements that have gone unaddressed.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Owonrin Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Sudden reversal, and change arriving without warning.</div>
+        <div class="odu-body">Governs instability and unpredictable turns of fortune — a call to remain grounded and adaptable when circumstances shift quickly.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Obara Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Pride, self-worth and the danger of overreach.</div>
+        <div class="odu-body">Speaks to confidence and generosity, and the caution needed to keep both from tipping into arrogance or empty boasting.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Okanran Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Urgency, conflict and the consequences of delay.</div>
+        <div class="odu-body">Often points to tension that has been avoided for too long, and the need to act or speak before a situation worsens.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Ogunda Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Struggle, iron, and the strength forged through hardship.</div>
+        <div class="odu-body">Connected to Ogun, Orisa of iron and labor — signaling a path that clears itself through effort, courage and the willingness to fight for it.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Osa Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Turbulence, and the unseen forces moving beneath a situation.</div>
+        <div class="odu-body">Associated with hidden opposition and the power of Aje — a call to spiritual protection and discernment about who can be trusted.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Ika Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Betrayal, and the wound of a trust broken.</div>
+        <div class="odu-body">Frequently addresses harm caused by those close to a person, and the ritual work needed to heal or guard against it.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Oturupon Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Reputation, secrecy and what is spoken in the dark.</div>
+        <div class="odu-body">Governs how a person's name is carried by others — warning against gossip and affirming the protection of one's good standing.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Otura Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Truth-telling, and the peace that honesty restores.</div>
+        <div class="odu-body">Associated with resolving conflict through open speech, and with the healing that follows once the truth is finally spoken.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Irete Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Perseverance, and rising again after a fall.</div>
+        <div class="odu-body">Speaks to resilience — a reminder that setbacks are not final, and that steady effort restores what was thought lost.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Ose Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Celebration, sweetness and rewards well earned.</div>
+        <div class="odu-body">Linked to Oshun, Orisa of love and abundance — a season of blessing, though one that asks for gratitude in return.</div>
+      </details>
+
+      <details class="odu-card">
+        <summary>Ofun Meji <span class="plus">+</span></summary>
+        <div class="odu-meaning">Purity, elder wisdom and the weight of sacred duty.</div>
+        <div class="odu-body">Considered among the most senior Odu — associated with old age, moral responsibility and the burden of carrying sacred knowledge well.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- KEY CONCEPTS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Foundations</span>
+    <div class="section-head"><h2>Key Concepts</h2></div>
+    <div class="concept-grid">
+      <div class="concept-card"><h4>Ori</h4><p>Your personal guardian soul and divine head — the inner force believed to guide destiny before birth and after.</p></div>
+      <div class="concept-card"><h4>Ebo</h4><p>Offering or sacrifice, prescribed after a reading to restore balance — anything from kindness performed to items presented at a shrine.</p></div>
+      <div class="concept-card"><h4>Esu / Elegba</h4><p>The gatekeeper and messenger between worlds — often misunderstood as a devil figure, but properly the keeper of crossroads and choice.</p></div>
+      <div class="concept-card"><h4>Ire &amp; Ibi</h4><p>The two currents every Odu carries — Ire, blessing and good fortune, and Ibi, challenge or misfortune to be guarded against.</p></div>
+      <div class="concept-card"><h4>The Orisa</h4><p>Divine forces of nature and human experience — Oshun, Ogun, Sango and others — each governing a domain of life.</p></div>
+      <div class="concept-card"><h4>Babalawo</h4><p>"Father of the mysteries" — the trained priest who memorizes the Odu and performs divination on behalf of others.</p></div>
+      <div class="concept-card"><h4>Opele &amp; Ikin</h4><p>The two primary tools of divination — a chain of eight half-seed shells, and a set of sixteen sacred palm nuts.</p></div>
+      <div class="concept-card"><h4>Eewo</h4><p>Taboos — specific things a person is advised to avoid, tied to their Ori or their Odu, said to protect their path.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVERBS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Wisdom</span>
+    <div class="section-head"><h2>Yoruba Proverbs</h2></div>
+    <p style="max-width:680px;margin-top:18px;color:var(--muted);">A starting collection of authentic Yoruba Ifa proverbs. Expanding over time.</p>
+
+    <div class="proverb-list">
+      <div class="proverb">
+        <div class="yoruba">"Bi a ba n gun igi, a n wo eyi t'o le."</div>
+        <div class="translation">"When climbing a tree, one watches for the strong branch."</div>
+        <div class="meaning">Meaning: choose your foundation with care before committing your weight to it.</div>
+      </div>
+      <div class="proverb">
+        <div class="yoruba">"Ọwọ́ ọmọdé kò tó pẹpẹ, tàgbà kò wọ akèrègbè."</div>
+        <div class="translation">"A child's hand can't reach the high shelf; an elder's hand can't fit the small gourd."</div>
+        <div class="meaning">Meaning: every generation has its own role, and neither can fully replace the other.</div>
+      </div>
+      <div class="proverb">
+        <div class="yoruba">"Bí ọjọ́ bá ń lọ, ọgbọ́n a máa ń wọlé."</div>
+        <div class="translation">"As days pass, wisdom enters the house."</div>
+        <div class="meaning">Meaning: understanding is built slowly, through lived time, not shortcuts.</div>
+      </div>
+      <div class="proverb">
+        <div class="yoruba">"Ẹní tí a ò kíni kò lè ṣíkà."</div>
+        <div class="translation">"One who is never greeted cannot easily do harm."</div>
+        <div class="meaning">Meaning: community and connection are part of what keeps a person accountable.</div>
+      </div>
+      <div class="proverb">
+        <div class="yoruba">"Ìgbà tí a bá fi ọwọ́ kan iná, l'á mọ̀ ọ́n gbóná."</div>
+        <div class="translation">"It's when we touch the fire that we know it's hot."</div>
+        <div class="meaning">Meaning: some lessons are only fully understood through direct experience.</div>
+      </div>
+      <div class="proverb">
+        <div class="yoruba">"Ìwà rere l'ẹ̀ṣọ́ ènìyàn."</div>
+        <div class="translation">"Good character is a person's true adornment."</div>
+        <div class="meaning">Meaning: conduct outlasts appearance as the measure of a person.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Ifa <em>Oracle</em></a>
+        <p>Authentic Yoruba Ifa divination, guided by AI, rooted in the 256 Odu.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="readings.html">Readings</a>
+          <a href="library.html">Knowledge Library</a>
+          <a href="store.html">Sacred Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About Ifa</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://t.me/Orispeak_bot">Telegram</a>
+          <a href="https://t.me/OrispeaksAdmin">Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ifa Oracle. All rights reserved.</span>
+      <span>Ile-Ife to everywhere.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

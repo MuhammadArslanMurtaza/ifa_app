@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacred Store — Ifa Oracle</title>
+<meta name="description" content="Authentic Yoruba spiritual tools, herbs and ritual items — sourced and shipped with care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin:36px 0 8px;}
+  .filter-tab{
+    padding:9px 18px;font-size:0.82rem;letter-spacing:0.02em;
+    border:1px solid rgba(240,235,224,0.14);border-radius:999px;
+    color:var(--muted);cursor:pointer;background:none;font-family:var(--sans);
+    transition:all .2s;
+  }
+  .filter-tab.active,.filter-tab:hover{border-color:var(--copper);color:var(--ink);}
+  .product-card .cat{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper);margin-bottom:8px;}
+  .product-card .swatch{
+    width:100%;height:120px;border-radius:6px;margin-bottom:18px;
+    background:linear-gradient(135deg, var(--terracotta), var(--surface) 70%);
+    opacity:0.85;
+  }
+  .shipping-note{
+    margin-top:56px;padding:22px 26px;background:var(--surface);
+    border:1px solid rgba(240,235,224,0.07);border-radius:6px;
+    font-size:0.9rem;color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="logo">Ifa <em>Oracle</em></a>
+    <nav>
+      <a href="readings.html">Readings</a>
+      <a href="library.html">Knowledge Library</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="about.html">About Ifa</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="start.html" class="btn btn-secondary btn-sm">Start Reading</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Sacred Store</span>
+    <h1>Tools of the Tradition</h1>
+    <p class="sub">Authentic Yoruba spiritual tools, herbs and ritual items — sourced and shipped with care.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="filters" role="tablist" aria-label="Filter products by category">
+      <button class="filter-tab active">All</button>
+      <button class="filter-tab">Divination Tools</button>
+      <button class="filter-tab">Ritual Items</button>
+      <button class="filter-tab">Herbs &amp; Oils</button>
+      <button class="filter-tab">Bundles</button>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Divination Tools</span>
+        <h3>Opele (Divination Chain)</h3>
+        <p class="desc">The traditional chain used by a Babalawo to cast the Odu during a reading.</p>
+        <div class="price">₦8,500 <small>NGN / USD</small> $20</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Divination Tools</span>
+        <h3>Ikin (Sacred Palm Nuts, Set of 16)</h3>
+        <p class="desc">Consecrated palm nuts used in the deepest form of Ifa divination.</p>
+        <div class="price">₦6,000 <small>NGN / USD</small> $14</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Herbs &amp; Oils</span>
+        <h3>Oshun Honey Oil</h3>
+        <p class="desc">A sweetening oil associated with Oshun — love, prosperity and grace.</p>
+        <div class="price">₦3,500 <small>NGN / USD</small> $8</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Ritual Items</span>
+        <h3>Ori (Shea Butter — Raw, Unrefined)</h3>
+        <p class="desc">Used to anoint the head, honoring one's Ori, the personal guardian soul.</p>
+        <div class="price">₦2,500 <small>NGN / USD</small> $6</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Herbs &amp; Oils</span>
+        <h3>White Iyun (Osun Powder / Camwood)</h3>
+        <p class="desc">A sacred powder used for marking, blessing and ritual preparation.</p>
+        <div class="price">₦2,000 <small>NGN / USD</small> $5</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Divination Tools</span>
+        <h3>Iyerosun (Divination Powder)</h3>
+        <p class="desc">Traced on the Opon Ifa (divination tray) to mark the Odu as it is cast.</p>
+        <div class="price">₦3,000 <small>NGN / USD</small> $7</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Bundles</span>
+        <h3>Ritual Starter Bundle</h3>
+        <p class="desc">Ori, honey, iyerosun and white cloth — everything needed to begin a simple home ritual.</p>
+        <div class="price">₦9,000 <small>NGN / USD</small> $21</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+      <div class="card product-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <span class="cat">Bundles</span>
+        <h3>Eshu Crossroads Kit</h3>
+        <p class="desc">Offerings and tools for honoring Eshu, the gatekeeper and messenger at the crossroads.</p>
+        <div class="price">₦7,500 <small>NGN / USD</small> $18</div>
+        <a href="#" class="btn btn-primary" style="margin-top:16px;">Add to Cart</a>
+      </div>
+
+    </div>
+
+    <div class="shipping-note">
+      Items shipped within Nigeria in 3–5 days. International shipping available — contact us for rates.
+      <br><span style="font-size:0.82rem;">Checkout accepts Paystack for Nigeria and Stripe for international orders. You'll receive a confirmation email with estimated delivery time after purchase.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Ifa <em>Oracle</em></a>
+        <p>Authentic Yoruba Ifa divination, guided by AI, rooted in the 256 Odu.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="readings.html">Readings</a>
+          <a href="library.html">Knowledge Library</a>
+          <a href="store.html">Sacred Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About Ifa</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://t.me/Orispeak_bot">Telegram</a>
+          <a href="https://t.me/OrispeaksAdmin">Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ifa Oracle. All rights reserved.</span>
+      <span>Ile-Ife to everywhere.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

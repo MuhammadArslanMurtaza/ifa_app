@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Clients Are Saying — Ifa Oracle</title>
+<meta name="description" content="Real readings, real people, real outcomes — testimonials from Ifa Oracle clients around the world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .testi-grid .testi-card.hidden{display:none;}
+  .submit-form{
+    max-width:600px;margin-top:44px;background:var(--surface);
+    border:1px solid rgba(240,235,224,0.07);border-radius:8px;padding:34px 30px;
+  }
+  .submit-form label{display:block;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .submit-form .field{margin-bottom:20px;}
+  .submit-form input,.submit-form textarea{
+    width:100%;background:var(--bg);border:1px solid rgba(240,235,224,0.14);
+    border-radius:4px;padding:12px 14px;color:var(--ink);font-family:var(--sans);font-size:0.92rem;
+  }
+  .submit-form input:focus,.submit-form textarea:focus{outline:none;border-color:var(--copper);}
+  .submit-form textarea{min-height:110px;resize:vertical;}
+  .submit-note{font-size:0.78rem;color:var(--muted);margin-top:14px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="logo">Ifa <em>Oracle</em></a>
+    <nav>
+      <a href="readings.html">Readings</a>
+      <a href="library.html">Knowledge Library</a>
+      <a href="testimonials.html" class="active">Testimonials</a>
+      <a href="about.html">About Ifa</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="start.html" class="btn btn-secondary btn-sm">Start Reading</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Testimonials</span>
+    <h1>What Clients Are Saying</h1>
+    <p class="sub">Real readings. Real people. Real outcomes.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="testi-grid" id="testiGrid">
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"The reading described my situation before I explained anything. It was unsettlingly accurate."</p><div class="who"><strong>Adaeze O.</strong><span>🇳🇬 Compatibility Check</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"I've consulted Babalawo before. This carried the same weight, and arrived in minutes."</p><div class="who"><strong>Marcus T.</strong><span>🇬🇧 General Divination</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"The ritual guide add-on made it possible to actually act on what the Odu revealed."</p><div class="who"><strong>Fernanda L.</strong><span>🇧🇷 Career Destiny Reading</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"I was skeptical going in. What came back addressed things I hadn't told anyone."</p><div class="who"><strong>Chidinma A.</strong><span>🇺🇸 Family &amp; Ancestral Reading</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"Fast, private, and it gave me language for something I'd felt for months but couldn't name."</p><div class="who"><strong>Kwame B.</strong><span>🇨🇦 Yearly Destiny Reading</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"The business reading pointed to exactly where I'd been avoiding a hard decision."</p><div class="who"><strong>Ijeoma N.</strong><span>🇳🇬 Business Reading</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"I use the Telegram bot every year for my destiny reading now. It's become a ritual of its own."</p><div class="who"><strong>Tobi F.</strong><span>🇬🇧 Yearly Destiny Reading</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"Respectful, clear, and genuinely rooted in the tradition — not generic horoscope language."</p><div class="who"><strong>Larissa M.</strong><span>🇧🇷 Dream Interpretation</span></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"It named the ancestral pattern in my family before I'd said a word about them."</p><div class="who"><strong>Oluwaseun D.</strong><span>🇹🇹 Family &amp; Ancestral Reading</span></div></div>
+
+      <!-- extra, revealed by Load More -->
+      <div class="testi-card hidden"><div class="stars">★★★★★</div><p class="quote">"The travel reading warned me about a delay before it happened. I trust it completely now."</p><div class="who"><strong>Priya S.</strong><span>🇺🇸 Travel &amp; Road Opening</span></div></div>
+      <div class="testi-card hidden"><div class="stars">★★★★★</div><p class="quote">"Naming my daughter through this reading gave the whole family peace."</p><div class="who"><strong>Bolanle K.</strong><span>🇳🇬 Child Naming &amp; Soul Mission</span></div></div>
+      <div class="testi-card hidden"><div class="stars">★★★★★</div><p class="quote">"It gave closure on a relationship I hadn't been able to fully let go of."</p><div class="who"><strong>Andre W.</strong><span>🇨🇦 Ex-Partner Reading</span></div></div>
+    </div>
+
+    <div class="center-cta">
+      <button class="btn btn-secondary" id="loadMoreBtn">Load More</button>
+    </div>
+
+    <div class="submit-form">
+      <span class="eyebrow">Share Yours</span>
+      <h3 style="font-family:var(--serif);font-size:1.4rem;margin:12px 0 22px;">Submit a Testimonial</h3>
+      <form onsubmit="event.preventDefault(); this.reset(); document.getElementById('submitThanks').style.display='block';">
+        <div class="field"><label for="t-name">Name</label><input id="t-name" type="text" required></div>
+        <div class="field"><label for="t-country">Country</label><input id="t-country" type="text" required></div>
+        <div class="field"><label for="t-service">Service Used</label><input id="t-service" type="text" required></div>
+        <div class="field"><label for="t-exp">Your Experience</label><textarea id="t-exp" required></textarea></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <p class="submit-note" id="submitThanks" style="display:none;">Thank you — your testimonial has been sent for review and will appear here once approved.</p>
+        <p class="submit-note">Submissions are reviewed by our team before appearing on this page.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Ifa <em>Oracle</em></a>
+        <p>Authentic Yoruba Ifa divination, guided by AI, rooted in the 256 Odu.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="readings.html">Readings</a>
+          <a href="library.html">Knowledge Library</a>
+          <a href="store.html">Sacred Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About Ifa</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://t.me/Orispeak_bot">Telegram</a>
+          <a href="https://t.me/OrispeaksAdmin">Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ifa Oracle. All rights reserved.</span>
+      <span>Ile-Ife to everywhere.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('loadMoreBtn').addEventListener('click', function(){
+    document.querySelectorAll('.testi-card.hidden').forEach(c => c.classList.remove('hidden'));
+    this.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

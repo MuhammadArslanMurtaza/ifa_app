@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ifa Oracle — Consult the Oracle</title>
+<meta name="description" content="Authentic Ifa divination readings, delivered in minutes. Consult the oracle on web or Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080608;--ink:#F0EBE0;--copper:#B87333;--muted:#888888;
+    --serif:'Playfair Display', serif;--sans:'Karla', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:32px 20px;position:relative;overflow:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .glow{
+    position:absolute;top:50%;left:50%;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(184,115,51,0.14), transparent 70%);
+    transform:translate(-50%,-50%);
+    animation:breathe 6s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes breathe{0%,100%{opacity:0.6;}50%{opacity:1;}}
+  @media(prefers-reduced-motion:reduce){.glow{animation:none;}}
+
+  .content{position:relative;z-index:1;max-width:480px;}
+
+  .logo{font-family:var(--serif);font-size:1.2rem;margin-bottom:32px;}
+  .logo em{font-style:normal;color:var(--copper);}
+  .tagline{
+    font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--copper);margin-top:6px;font-weight:600;
+  }
+
+  h1{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(1.9rem, 6vw, 2.6rem);
+    line-height:1.15;margin:28px 0 14px;
+  }
+  p.desc{color:var(--muted);font-size:0.98rem;margin-bottom:34px;}
+
+  .cta-row{display:flex;flex-direction:column;gap:14px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;
+    padding:17px 26px;font-size:0.95rem;font-weight:700;letter-spacing:0.02em;
+    border-radius:4px;transition:filter .18s ease;
+  }
+  .btn-primary{background:var(--copper);color:#0A0806;}
+  .btn-primary:hover{filter:brightness(1.12);}
+  .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--copper);}
+  .btn-secondary:hover{background:rgba(184,115,51,0.1);}
+
+  .social-proof{
+    margin-top:30px;font-size:0.82rem;color:var(--muted);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .social-proof .dot{width:5px;height:5px;border-radius:50%;background:var(--copper);}
+
+  .services-row{
+    margin-top:44px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+  }
+  .service-icon{display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .odu-mark{
+    display:inline-grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:4px;
+    gap:4px 6px;width:18px;
+  }
+  .odu-mark span{height:4px;border-radius:1px;background:var(--copper);opacity:0.85;}
+  .odu-mark span.ii{background:none;border-top:4px double var(--copper);height:0;opacity:0.85;}
+  .service-icon span.label{font-size:0.74rem;color:var(--muted);}
+</style>
+</head>
+<body>
+
+<div class="glow" aria-hidden="true"></div>
+
+<div class="content">
+  <div class="logo">Ifa <em>Oracle</em></div>
+  <div class="tagline">Yoruba Ifa Divination · AI-Guided</div>
+
+  <h1>The Oracle That Knows Before You Speak</h1>
+  <p class="desc">Authentic readings from the sacred 256 Odu, delivered in minutes.</p>
+
+  <div class="cta-row">
+    <a href="https://app.orispeaks.live" class="btn btn-primary">Consult the Oracle — Web App</a>
+    <a href="https://t.me/Orispeak_bot" class="btn btn-secondary">Open in Telegram</a>
+  </div>
+
+  <div class="social-proof">2,400+ readings delivered <span class="dot"></span> 18 countries</div>
+
+  <div class="services-row">
+    <div class="service-icon">
+      <div class="odu-mark"><span></span><span class="ii"></span><span></span><span></span><span class="ii"></span><span></span></div>
+      <span class="label">Divination</span>
+    </div>
+    <div class="service-icon">
+      <div class="odu-mark"><span class="ii"></span><span></span><span class="ii"></span><span></span><span></span><span class="ii"></span></div>
+      <span class="label">Yearly Destiny</span>
+    </div>
+    <div class="service-icon">
+      <div class="odu-mark"><span class="ii"></span><span class="ii"></span><span></span><span></span><span></span><span class="ii"></span></div>
+      <span class="label">Compatibility</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
