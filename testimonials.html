@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .testi-grid .testi-card.hidden{display:none;}
   .submit-form{
     max-width:600px;margin-top:44px;background:var(--surface);
     border:1px solid rgba(240,235,224,0.07);border-radius:8px;padding:34px 30px;
@@ -38,7 +37,7 @@
       <a href="about.html">About Ifa</a>
       <a href="faq.html">FAQ</a>
     </nav>
-    <a href="start.html" class="btn btn-secondary btn-sm">Start Reading</a>
+    <a href="https://app.orispeaks.live" class="btn btn-secondary btn-sm">Start Reading</a>
   </div>
 </header>
 
@@ -52,25 +51,8 @@
 
 <section>
   <div class="wrap">
-    <div class="testi-grid" id="testiGrid">
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"The reading described my situation before I explained anything. It was unsettlingly accurate."</p><div class="who"><strong>Adaeze O.</strong><span>🇳🇬 Compatibility Check</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"I've consulted Babalawo before. This carried the same weight, and arrived in minutes."</p><div class="who"><strong>Marcus T.</strong><span>🇬🇧 General Divination</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"The ritual guide add-on made it possible to actually act on what the Odu revealed."</p><div class="who"><strong>Fernanda L.</strong><span>🇧🇷 Career Destiny Reading</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"I was skeptical going in. What came back addressed things I hadn't told anyone."</p><div class="who"><strong>Chidinma A.</strong><span>🇺🇸 Family &amp; Ancestral Reading</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"Fast, private, and it gave me language for something I'd felt for months but couldn't name."</p><div class="who"><strong>Kwame B.</strong><span>🇨🇦 Yearly Destiny Reading</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"The business reading pointed to exactly where I'd been avoiding a hard decision."</p><div class="who"><strong>Ijeoma N.</strong><span>🇳🇬 Business Reading</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"I use the Telegram bot every year for my destiny reading now. It's become a ritual of its own."</p><div class="who"><strong>Tobi F.</strong><span>🇬🇧 Yearly Destiny Reading</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"Respectful, clear, and genuinely rooted in the tradition — not generic horoscope language."</p><div class="who"><strong>Larissa M.</strong><span>🇧🇷 Dream Interpretation</span></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"It named the ancestral pattern in my family before I'd said a word about them."</p><div class="who"><strong>Oluwaseun D.</strong><span>🇹🇹 Family &amp; Ancestral Reading</span></div></div>
-
-      <!-- extra, revealed by Load More -->
-      <div class="testi-card hidden"><div class="stars">★★★★★</div><p class="quote">"The travel reading warned me about a delay before it happened. I trust it completely now."</p><div class="who"><strong>Priya S.</strong><span>🇺🇸 Travel &amp; Road Opening</span></div></div>
-      <div class="testi-card hidden"><div class="stars">★★★★★</div><p class="quote">"Naming my daughter through this reading gave the whole family peace."</p><div class="who"><strong>Bolanle K.</strong><span>🇳🇬 Child Naming &amp; Soul Mission</span></div></div>
-      <div class="testi-card hidden"><div class="stars">★★★★★</div><p class="quote">"It gave closure on a relationship I hadn't been able to fully let go of."</p><div class="who"><strong>Andre W.</strong><span>🇨🇦 Ex-Partner Reading</span></div></div>
-    </div>
-
-    <div class="center-cta">
-      <button class="btn btn-secondary" id="loadMoreBtn">Load More</button>
+    <div class="testi-empty">
+      <p>We're still collecting real client testimonials. Check back soon — or be one of the first to share your experience below.</p>
     </div>
 
     <div class="submit-form">
@@ -122,13 +104,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  document.getElementById('loadMoreBtn').addEventListener('click', function(){
-    document.querySelectorAll('.testi-card.hidden').forEach(c => c.classList.remove('hidden'));
-    this.style.display = 'none';
-  });
-</script>
 
 </body>
 </html>
